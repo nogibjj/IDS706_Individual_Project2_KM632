@@ -100,7 +100,7 @@ cargo run delete "your sql query"
 
 I incorporated Github Copilot in the following ways: 
 
-* I let Copilot write me unit test function 
+* I let Copilot write me unit test functions
 
 * Used "Explain this" to understanding compile errors
 
@@ -112,11 +112,30 @@ I incorporated Github Copilot in the following ways:
 
 In this project, I make extensive use of Rust's '?' error propagation feature. All recoverable errors are propagated up to the main.rs file, where they are printed to the terminal and the program exits gracefully.
 
+## Usages of Rust Unique Features
+
+* I used Rust's ownership and borrowing feature to write memory safe program
+
+* I used "match" feature of Rust to create command line tools
+
+* Lastly, I used its error handling system based on Result and Options types
+
 ## Optimized Rust Binary
 
 Optimized Rust binary is in Actions. Go to the latest worklow and scroll all the way down to see the downloan link. 
 
 ![Alt Text](imgs/binary.png)
+
+## Github Actions
+
+Feel free to run the following commands to lint, format, and test
+
+```bash
+make lint
+make format
+make test
+```
+![Alt Text](imgs/actions.png)
 
 ## References
 
