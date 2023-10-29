@@ -10,6 +10,8 @@ This project is a Rust-based command-line tool that enables users to perform CRU
 
 ## Installation
 
+This project is built in Rust based developement container with all the dependencies included in the container, hence you can clone and build the project to start playing with it! Alternatively, you can open the container in Codespaces to play around! 
+
 * Clone the repository
 
 ```bash
