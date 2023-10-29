@@ -60,6 +60,8 @@ This will run the following query:
 ```sql 
 SELECT * FROM world_billionaires WHERE category = 'Technology' AND age > 90;
 ```
+![Alt Text](imgs/read.png)
+
 If you would like to run your custom query, run 
 
 ```bash 
@@ -77,6 +79,8 @@ This will run the following query:
 ```sql 
 UPDATE world_billionaires SET final_worth = 300000 WHERE person_name = 'Mark Zuckerberg';
 ```
+![Alt Text](imgs/update.png)
+
 If you would like to run your custom query, run 
 
 ```bash 
@@ -94,6 +98,8 @@ This will run the following query:
 ```sql 
 DELETE FROM world_billionaires WHERE person_name = 'Elon Musk';
 ```
+![Alt Text](imgs/delete.png)
+
 If you would like to run your custom query, run 
 
 ```bash 
