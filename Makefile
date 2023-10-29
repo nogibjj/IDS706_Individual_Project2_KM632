@@ -38,14 +38,3 @@ update:
 
 delete:
 	cargo run delete "DELETE FROM world_billionaires WHERE person_name = 'Elon Musk';"
-
-generate_and_push:
-	@if [ -n "$$(git status --porcelain)" ]; then \
-		git config --local user.email "action@github.com"; \
-		git config --local user.name "GitHub Action"; \
-		git add .; \
-		git commit -m "Add query log"; \
-		git push; \
-	else \
-		echo "No changes to commit. Skipping commit and push."; \
-	fi

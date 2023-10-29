@@ -2,12 +2,9 @@ extern crate csv;
 extern crate rusqlite;
 use rusqlite::Connection;
 use std::error::Error;
-use std::fs;
 use std::fs::File;
 
-fn database_exists() -> bool {
-    fs::metadata("billionaires.db").is_ok()
-}
+
 
 // return either Ok()) or Err(rusqlite::Error)
 fn read_csv_file(file_path: &str, conn: &Connection) -> Result<(), Box<dyn Error>> {
@@ -24,8 +21,10 @@ fn read_csv_file(file_path: &str, conn: &Connection) -> Result<(), Box<dyn Error
 fn create_database() -> rusqlite::Result<Connection> {
     let conn = Connection::open("billionaires.db")?;
 
+    conn.execute("DROP TABLE IF EXISTS world_billionaires", [])?;
+
     conn.execute(
-        "CREATE TABLE IF NOT EXISTS world_billionaires (
+        "CREATE TABLE world_billionaires (
             id INTEGER PRIMARY KEY,
             rank INTEGER,
             final_worth INTEGER,
@@ -47,10 +46,8 @@ fn create_database() -> rusqlite::Result<Connection> {
 }
 
 pub fn etl_process() -> Result<(), Box<dyn Error>> {
-    if !database_exists() {
-        let conn = create_database()?;
-        read_csv_file("world_billionaires.csv", &conn)?;
-    }
+    let conn = create_database()?;
+    read_csv_file("world_billionaires.csv", &conn)?;
     Ok(())
 }
 
