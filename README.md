@@ -32,7 +32,8 @@ make etl
 ```
 Next, you can perform any of the CRUD operations. In the Makefile, I already listed some CRUD operations you can run easily. Otherwise, you can also run your own queies (shown below!)
 
-### Create
+1. **Create**
+
 To run the example Create operation, you can run
 
 ```bash
@@ -48,7 +49,8 @@ If you would like to run your custom query, run
 cargo run create "your sql query"
 ```
 
-### Read
+2. **Read**
+
 To run the example Read operation, you can run
 
 ```bash
@@ -64,7 +66,8 @@ If you would like to run your custom query, run
 cargo run read "your sql query"
 ```
 
-### Update
+3. **Update**
+
 To run the example Update operation, you can run
 
 ```bash
@@ -80,7 +83,8 @@ If you would like to run your custom query, run
 cargo run update "your sql query"
 ```
 
-### Delete 
+4. **Delete**
+
 To run the example Delete operation, you can run
 
 ```bash
