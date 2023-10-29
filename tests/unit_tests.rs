@@ -1,4 +1,3 @@
-
 use sqlite_rust::{create_action, delete_action, update_action};
 extern crate rusqlite;
 use rusqlite::Connection;
@@ -35,12 +34,15 @@ mod tests {
 
         // Assert
         let conn = Connection::open("billionaires.db")?;
-        let count: i32 = conn.query_row("SELECT COUNT(*) FROM world_billionaires WHERE person_name = 'Larry Page';", [], |row| row.get(0))?;
+        let count: i32 = conn.query_row(
+            "SELECT COUNT(*) FROM world_billionaires WHERE person_name = 'Larry Page';",
+            [],
+            |row| row.get(0),
+        )?;
         assert_eq!(count, 0);
 
         Ok(())
     }
-
 
     #[test]
     fn test_create_action() -> Result<(), Box<dyn Error>> {
@@ -58,6 +60,4 @@ mod tests {
 
         Ok(())
     }
-
-
 }

@@ -23,6 +23,7 @@ release:
 
 all: format lint test run
 
+
 etl: 
 	cargo run etl
 

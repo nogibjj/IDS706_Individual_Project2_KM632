@@ -1,4 +1,4 @@
-name: cicd
+name: Rust CI/CD 
 
 on: 
   push:
@@ -14,22 +14,33 @@ jobs:
     
     
     steps: 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
         with:
             toolchain: stable
             profile: minimal
             components: clippy, rustfmt
             override: true
+      - name: Rust version
+        run: make rust-version
+      
+      - name: Build Rust
+        run: make release
 
-      - name: Run rustfmt
+      - name: Format
         run: make format
 
-      - name: Run clippy
+      - name: Lint
         run: make lint
 
-      - name: Run clippy
+      - name: Test
         run: make test
-
-      - name: Run clippy
-        run: make release
+      
+      - name: Archive Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: optimized-binary
+          path: target/release/sqlite_rust
+    
+      
+    
