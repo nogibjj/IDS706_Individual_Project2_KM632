@@ -21,7 +21,7 @@ cd IDS706_Individual_Project2_KM632
 ```bash 
 make release 
 ```
-This will create an optimized binary in the target/release/sqlite_rust
+This will create an optimized binary in the target/release/sqlite_rust and build the project. 
 
 ## Usage / CRUD Demonstration
 
@@ -45,7 +45,7 @@ INSERT INTO world_billionaires (rank, final_worth, category, person_name, age, c
 If you would like to run your custom query, run 
 
 ```bash 
-command run create "your sql query"
+cargo run create "your sql query"
 ```
 
 ### Read
